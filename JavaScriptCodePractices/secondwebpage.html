@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            background-color: aliceblue;
+            color: blue;
+            padding: 20px;
+            margin: 0;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Successfully Completed Your Application</h1>
+    
+    <div id="form-data"></div>
+
+    <button type="button" onclick="back()">Back</button>
+    <script>
+         let back=() =>{
+        window.history.go(-1);
+    }
+        // Retrieve form data from the URL
+        const params = new URLSearchParams(window.location.search);
+        const username = params.get("username");
+        const email = params.get("email");
+        const phone = params.get("phone");
+        const gender = params.get("gender");
+        const dropdown = params.get("dropdown");
+
+        // Create and display the data
+        const formDataDiv = document.getElementById("form-data");
+        formDataDiv.innerHTML = `
+            <p><strong>Username:</strong> ${username || "N/A"}</p>
+            <p><strong>Email:</strong> ${email || "N/A"}</p>
+            <p><strong>Phone:</strong> ${phone || "N/A"}</p>
+            <p><strong>Gender:</strong> ${gender || "N/A"}</p>
+            <p><strong>Selected Programming Language:</strong> ${dropdown || "N/A"}</p>
+        `;
+    </script>
+</body>
+</html>

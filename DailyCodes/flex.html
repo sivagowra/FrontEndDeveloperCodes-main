@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        .continer {
+            display: flex;
+            justify-content: space-between;
+        }
+        p {
+            border: 1px solid red;
+            width: 50px; /* Fixed width */
+            height: 50px; /* Fixed height */
+            margin: 10px;
+            font-style: italic;
+            font-weight: 900;
+            color: brown;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            line-height: 1.2;
+        }
+        p span {
+            white-space: normal; /* Allow wrapping of text */
+            word-wrap: break-word;
+            display: inline-block;
+            text-align: center;
+        }
+        p:hover {
+            color: green;
+            border: 1px solid blue;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            const elements = document.querySelectorAll('.continer p span');
+            elements.forEach(el => {
+                const parent = el.parentElement;
+                const maxFontSize = 25;
+                const minFontSize = 3;
+                let fontSize = maxFontSize; // Start with the maximum font size
+
+                // Reduce font size until content fits within the box
+                while ((el.scrollHeight > parent.offsetHeight || el.scrollWidth > parent.offsetWidth) && fontSize > minFontSize) {
+                    fontSize--;
+                    el.style.fontSize = fontSize + "px";
+                }
+
+                // If the content fits, ensure font size doesn't exceed maxFontSize
+                el.style.fontSize = Math.min(fontSize, maxFontSize) + "px";
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="continer">
+        <p><span>flex-direction:row stacks the flex items horizontallyrow stacks the flex items horizontallyrow stacks the flex items horizontallyrow stacks the flex items horizontally rowrow stacks the flex items horizontallyrow stacks the flex items horizontally</span></p>
+        <p><span>flex-direction: row stacks the flex items horizontally</span></p>  
+        <p><span>flex-direction: row stacks the flex items horizontally</span></p>
+    </div>
+</body>
+</html>

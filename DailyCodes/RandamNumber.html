@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random</title>
+    <style>
+        .r{
+            border: 1px solid;
+            width: 200px; 
+            height: 200px;
+            text-align: center;
+            font-size: large;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="r"> <p id="mylabel">0</p>
+        <p id="mylabel1">0</p>
+        <p id="mylabel2">0</p>
+        <button type="button" id="myButton">Roll</button><br><br>
+    </div>
+   
+
+    <script>
+const min=1;
+const max=6;
+const myButton=document.getElementById('myButton');
+const mylabel=document.getElementById('mylabel');
+const mylabel1=document.getElementById('mylabel1');
+const mylabel2=document.getElementById('mylabel2');
+
+let randomNum;
+   myButton.onclick=function(){
+    randomNum=Math.floor(Math.random()*max)+min;
+    mylabel.textContent=randomNum;
+    randomNum=Math.floor(Math.random()*max)+min;
+    mylabel1.textContent=randomNum;
+    randomNum=Math.floor(Math.random()*max)+min;
+    mylabel2.textContent=randomNum;
+   }
+    </script>
+    
+</body>
+</html>

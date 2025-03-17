@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM OBJECT MODEL</title>
+</head>
+<body>
+    <div>
+        <p id="message">Hello Siva</p>
+        
+    </div>
+    <div><input type="radio" name="langvage" value="js">
+        <label for="langvage">js</label>
+        <input type="radio" name="langvage" value="Python">
+        <label for="langvage"> Python</label>
+    
+    </div>
+        <div>
+            <h1>First Name</h1>
+            <h1>Second Name</h1>
+
+        </div>
+        <div>
+            <p class="qq">Hello JavaScript</p>
+            <p class="qq">Hello Python </p>
+        </div>
+        <div class="title">
+            <p class="text">WelCome </p>
+        </div>
+
+        <div class="TITLE">
+            <p class="tex">WelCome1 </p>
+            <p class="tex">WelCome2 </p>
+            <p class="tex">WelCome3 </p>
+            <p class="tex">WelCome4 </p>
+
+        </div>
+
+        <!-- create element new element -->
+         <ul id="menu">
+            <li>Home</li>
+            <li>About</li>
+            <li>Blo</li>
+            <li style="display:none;">Project</li>
+
+         </ul>
+         
+    <script>
+        let mes=document.getElementById('message');
+        console.log(mes);
+        let btn=document.getElementsByName('langvage');
+        console.log(btn);
+        
+        let tag=document.getElementsByTagName('h1');
+        console.log(tag);
+        let qurry=document.querySelector(".qq");
+        console.log(qurry);
+        let qurryAll=document.querySelectorAll('.qq');
+        console.log(qurryAll);
+        
+        let parent=document.querySelector(".text");
+        console.log(parent.parentNode);
+         let child=document.querySelector(".TITLE");
+         console.log(child.firstElementChild);
+
+        //  create element code
+
+        let section=document.createElement("section");
+        section.innerHTML="<p>Create New Element</p>";
+        document.body.appendChild(section);
+        console.log(section);
+        
+                //create element new element 
+
+                var menu=document.getElementById('menu');
+                let list=document.createElement("li");
+                list.innerHTML="Contact";
+                menu.appendChild(list);
+                console.log(list);
+                
+//inner text(Hiden element not dispaly)
+ menu=document.getElementById('menu');
+console.log(menu.innerText);
+
+ //text Content (Hiden element Dispaly)
+ menu=document.getElementById('menu');
+console.log(menu.textContent);
+
+
+
+         
+    </script>
+    
+</body>
+</html>

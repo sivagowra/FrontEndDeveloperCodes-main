@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="demo">OtpCode</h1>
+    <h1 id="demo1">Power </h1>
+    <h1 id="demo2">Area of curcle</h1>
+
+
+    <button onclick="otpCode()">Send Otp </button>
+    <button onclick="squre()">Power Button </button>
+    <button onclick="areaOfCircle(10)">Circle area </button>
+
+
+    <script>
+        function otpCode() {
+            const num= Math.floor(Math.random()*10009)
+            // document.write(num)
+document.getElementById('demo').innerHTML=num;            
+        }
+
+        function squre(){
+            let a=20;
+            let b=2;
+            document.getElementById('demo1').innerHTML=Math.pow(a,b);
+        }
+
+        function areaOfCircle(r) {
+            let PI=Math.PI;
+            document.getElementById('demo2').innerHTML=PI*r*r;
+        }
+
+        function sumOfArray(arr) {
+            let sum=0;
+            for( let i=0; i< arr.length; i++) {
+                sum+=i;
+
+            }
+            return sum
+        }
+        const numbers = [1, 2, 3, 4, 5,6,4,7,8];
+        document.write(sumOfArray(numbers));
+
+
+    </script>
+    
+</body>
+</html>

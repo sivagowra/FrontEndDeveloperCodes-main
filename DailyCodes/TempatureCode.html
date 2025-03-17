@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Code </title>
+</head>
+<style>
+    h3{
+        color: rgba(74, 74, 196, 0.932);
+    }
+    body{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: center;
+        border: 1px solid black;
+        max-width:350px;
+        height: 300px; 
+        box-shadow: 5px 5px 10px  black;
+       
+
+        
+    }
+    body:hover{
+        box-shadow: 5px 5px 15px  rgb(158, 12, 12);
+
+
+    }
+    button{
+        background-color: blue;
+        padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+
+    }
+    button:hover{
+        background-color: red;
+
+    }
+    #textBox{
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    p{
+        color: red;
+    }
+    
+</style>
+<body>
+    
+    <form>
+        <h3>Temperature conversion:</h3>
+        <input type="Number" id="textBox" value="0"><br>
+        <input type="radio" id="toFahrenheit" name="unit">
+        <label for="toFahrenheit">Celsius  To Fahrenheit</label><br>
+        <input type="radio" id="Celsius" name="unit">
+        <label for="Celsius"> Fahrenheit To Celsius</label><br>
+        <button  type="button"      onclick="convert()">Submit</button>
+        <p id="result"></p>
+    </form>
+    <script>
+        let textBox=document.getElementById('textBox')
+        let toFahrenheit=document.getElementById('toFahrenheit')
+        let Celsius=document.getElementById('Celsius')
+        let result=document.getElementById('result')
+        let temp;
+
+        function convert(){
+            if(toFahrenheit.checked){
+                temp=Number(textBox.value)
+                temp=temp*9/5+32;
+                result.textContent=temp.toFixed(1)+"F"
+            }
+            else if(Celsius.checked){
+                temp=Number(textBox.value)
+                temp=(temp-32)*(5/9);
+                result.textContent=temp.toFixed(1)+"C"
+            }
+        
+            else{
+                result.textContent="Select Unit"
+            }
+
+        }
+
+    </script>
+</body>
+</html>

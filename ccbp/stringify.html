@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stringify</title>
+</head>
+<body>
+    <script>
+let person={
+    name:"Siva",
+    age:25,
+    job:"software"
+};
+// object to string chnage the data
+let stringifyMethod=JSON.stringify(person);
+localStorage.setItem("localStorage",stringifyMethod)
+console.log(stringifyMethod);
+console.log(typeof(stringifyMethod));
+let storage=localStorage.getItem('localStorage')
+
+// string to object change data
+
+let parseMethod=JSON.parse(storage);
+console.log(parseMethod);
+console.log(typeof(parseMethod));
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

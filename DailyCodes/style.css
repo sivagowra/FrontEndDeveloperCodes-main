@@ -1,0 +1,9 @@
+body{
+    font-family: verdana;
+    font-size: 25px;
+}
+#MyP1{
+    background-color: blue;
+    margin: 0px;
+    padding: 20px;
+}

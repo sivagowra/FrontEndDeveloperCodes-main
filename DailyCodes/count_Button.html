@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Button</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        div{
+            border: 1px solid;
+            width: 500px;
+            height: 200px;
+            background-color: pink;
+        }
+        button{
+            background-color: rgb(133, 133, 218);
+            padding: 25px;
+            border-radius: 20px;
+        }
+        h1{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="counters">0</h1>
+        <p>
+            <button id="inc" type="button">Increment</button>
+            <button id="reset" type="button">Reset</button>
+            <button id="dec" type="button"> Decrement</button>
+        </p>
+    </div>
+    <script>
+    let count=0;
+let inc=document.getElementById('inc')
+let reset=document.getElementById('reset')
+let dec=document.getElementById('dec')
+let counters=document.getElementById('counters')
+
+ function color(){
+    if(count>0){
+        counters.style.color="red";
+    }
+    else if(count<0){
+        counters.style.color="yellow";
+    }
+    else{
+        counters.style.color="blue";
+
+    }
+ }
+inc.onclick=function(){
+    count++;
+    counters.textContent=count;
+    color(count)
+
+}
+reset.onclick=function(){
+    count=0
+    counters.textContent=count;
+    color(count)
+
+
+}
+dec.onclick=function(){
+    count--;
+    counters.textContent=count;
+    color(count)
+
+}
+ </script>
+   
+    
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Codes</title>
+    <style>
+        /* Ensure button styling and pseudo-element works */
+        button {
+            position: relative; /* To contain the ::before pseudo-element */
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            border: 2px solid #000; /* Add some button styling */
+            background: #f0f0f0;
+        }
+
+        button::before {
+            content: "";
+            position: absolute; /* Allows us to position the pseudo-element relative to the button */
+            width: 10px;
+            height: 2px;
+            left: 80%;
+            top: -5px;
+            background: #272822; /* Add background color for visibility */
+            border: 2px solid #000; /* Default fallback border color */
+            transition: 2s; /* Smooth transition for hover or any change */
+        }
+
+        button:hover::before {
+            left: 10%; /* Change position on hover for testing purposes */
+            background: rgb(236, 8, 8); /* Change background on hover */
+        }
+    </style>
+</head>
+<body>
+    <p>Hello Siva</p>
+    <button class="button" type="button">Button</button>
+
+    <button type="button" onclick="alert('good morning gopi')">Gopi</button>
+</body>
+</html>

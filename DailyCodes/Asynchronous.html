@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous Functions</title>
+</head>
+<body>
+    <script>
+        
+    //     getStudent(5,(student)=>{
+    //         console.log("Student",student);
+    //         getSubjects(student.id,(subjects)=>{
+    //         console.log(subjects);
+    //         })  
+    //         getSubjectss(student.id,(subjects)=>{
+    //             console.log(subjects); 
+    //         })
+    //     });
+
+    //     function getStudent(id,callback){
+    //     setTimeout(()=>{    
+    //         console.log("naidu")
+    //         callback({name:"Siva",id:2});
+    //     },2000);
+    // }
+    //     function getSubjects(id,callback){
+    //     setTimeout(()=>{
+    //         console.log("hello Subject",id);
+    //         callback(["maths","Science","English"])
+    //     },2000)
+    // }
+    // function getSubjectss(id,callback){
+    //     setTimeout(()=>{
+    //         console.log("hello Subject",id);
+    //         callback(["mathss","Sciences","Englishs"])
+    //     },2000)
+    // }
+
+getCallBack(1,(bio)=>{
+    console.log(bio);
+    
+})
+    function getCallBack(id,callback){       
+        callback({name:"siva krishna",age:25}) 
+
+    }
+
+
+
+//promise
+  const promise=new Promise((resolve,reject) =>{
+    setInterval(()=>{
+        const d=new Date()
+        const date=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()
+        resolve(date)
+        reject("Not Dispaly date")
+    },2000)
+  });
+  promise
+  .then((result)=>document.write(result))
+  .catch((error)=>document.write(error));
+
+  
+    </script>
+</body>
+</html>

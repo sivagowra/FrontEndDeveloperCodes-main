@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application form</title>
+
+</head>
+<body>
+    <form method="get" action="SubmitPage.html">
+        <fieldset>
+            <legend>Application Form</legend>
+            <label for="username">User Name</label>
+            <input type="text" name="username" id="username" placeholder="Name" required ><br>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="E-Mail" required > <br>
+            <label for="password">Pass word</label>
+            <input type="password" name="password" id="password" placeholder="Pass Word" required ><br>
+             <label for="phoneNumber">Phone Number</label>
+            <input type="number" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" required ><br>
+            <label for="notes">Note</label>
+            <textarea name="notes" id="notes" rows="2"  cols="25"></textarea><br>
+            <label >Gender</label>
+            <input type="radio" id="male" name="gender" value="male" required >Male
+            <input type="radio" id="female" name="gender" value="female" required >Female<br>
+
+
+
+            <label >Which program you select</label><br>
+
+            <select name="dropdown" id="">
+                <option value="" disabled selected>Select</option>
+                <option value="C langvage" >C Langvage</option>
+                <option value="python Langvage" >Python</option>
+                <option value="javaScript langvage" >javaScript</option>
+                <option value="Vue.js" >Vue</option>
+            </select><br>
+            <label for="fileupload">marks memo upload</label>
+            <input type="file" name="fileupload" id="fileupload" accept="application/*" ><br>
+
+            <input type="submit" value="Submit" name="submit" />
+
+
+        </fieldset>
+    </form>
+    
+</body>
+</html>

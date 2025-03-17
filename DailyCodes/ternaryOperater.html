@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ternary Operater</title>
+</head>
+<body>
+
+    <script>
+        //age code 
+        let age=prompt("Enter Your Age");
+        let message= age >=18 ? "your an adult" : "your minor";
+        document.write(message)
+        console.log(message);
+        
+        // document.write(message)
+        
+// discount apply
+        let perchaseAmount=prompt('perchaseAmount');
+        let discount=perchaseAmount>=100?10:0;
+        console.log(`Your Total is $${perchaseAmount-perchaseAmount * (discount/100) }`);
+        document.write(`Your Total is $${perchaseAmount - perchaseAmount * (discount/100) }`)
+
+        //sliceing
+let email="Bro@gmail.com"
+        const username=email.slice(0,email.indexOf("@"));
+        let extension=email.slice(email.indexOf("@")+1);
+        console.log(username);
+        console.log(extension);
+let a=10>9>8;
+        console.log(a==true);
+
+        //method changeing 
+
+        let user= window.prompt("enter your name:");
+        user=user.trim().charAt(0).toUpperCase()+user.trim().slice(1,2).toLowerCase();
+        console.log(user);
+        
+        
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Back Function</title>
+</head>
+<p id="callBack"></p>
+<p id="callBack2"></p>
+<p id="demo2"></p>
+
+<body>
+    <script>
+        //Sequence Control
+
+        //Call Back
+        let myFunction=(some)=>{
+            document.getElementById('callBack').innerHTML=some;
+
+        }
+        function Calculator(num1,num2){
+            let sum=num1+num2;
+        return sum;       
+     }
+     let result=Calculator(4,6);
+     myFunction(result)
+
+
+     //Call Back2
+
+     let callBackFunction=(some2)=>{
+        document.getElementById('callBack2').innerHTML=some2;
+     }
+
+      function Sample(n1,n2){
+        let multiple=n1*n2
+        callBackFunction(multiple)
+
+     }
+     Sample(2,6)
+
+
+
+     // Callback Functions
+
+    let callFun=(s)=>{
+   
+    document.getElementById('demo2').innerHTML=s;
+}
+
+function callBackApply(s1,s2,callback){
+    let power=s1**s2;
+    callback(power)
+}
+callBackApply(2,3,callFun)
+    </script>
+</body>
+</html>

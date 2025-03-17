@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back Ground colors</title>
+</head>
+<style>
+    button{
+        padding: 20px;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <p>
+        <button id="button1"  style="background-color: red;" type="button">Red</button>
+        <button id="button2" style="background-color: rgb(5, 97, 15);" type="button">Green</button>
+        <button id="button3"style="background-color: blue;" type="button">Blue</button>
+    </p>
+    <script>
+        let button1=document.getElementById('button1');
+        let button2=document.getElementById('button2');
+        let button3=document.getElementById('button3');
+        button1.onclick=function(){
+            document.body.style.backgroundColor="red";
+        }
+        button2.onclick=function(){
+            document.body.style.backgroundColor="green";
+        }
+        button3.onclick=function(){
+            document.body.style.backgroundColor="blue";
+        }
+    </script>
+    
+</body>
+</html>

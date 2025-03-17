@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Functions</h1>
+<h2>Function Sequence</h2>
+<p>JavaScript functions are executed in the sequence they are called.</p>
+
+<p id="demo"></p>
+<p id="call"></p>
+
+<button onclick="myFirst()">My First function</button>
+<button onclick="mySecond()">My Second function</button>
+
+<script>
+function Display(some) {
+    document.getElementById("demo").innerHTML=some;
+
+}
+function myFirst() {
+    Display("Hello Siva")
+}
+function mySecond() {
+    Display("Good Night Siva")
+}
+function MyDisplay(sum) {
+    document.getElementById("call").innerHTML= sum;
+}
+function caluculate(a,b) {
+    let sum=a+b;
+    return sum
+}
+MyDisplay(caluculate(5,25))
+
+</script>
+
+</body>
+</html>

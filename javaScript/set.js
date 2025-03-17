@@ -1,0 +1,11 @@
+let num=new Set("bookReader");
+console.log(num);
+let str=new Set();
+str.add(2);
+str.add(3);
+str.add(2);
+str.add(4);
+str.add(4);
+str.add(4);
+console.log(str);
+console.log(str.has(4));

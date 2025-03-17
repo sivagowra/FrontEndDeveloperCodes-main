@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array </title>
+</head>
+<body>
+    <div>
+        
+    </div>
+    <script>
+        let Array=["Srinuvas","Narasimha rao","Subaravu","Gopala Krishna"];
+        // add last item
+        Array.push("Naveen");
+        for( let i=0;i<=Array.length-1;i++){
+            console.log(Array[i]);
+        }
+
+        // delete last item
+        Array.pop()
+        console.log(Array);// ['Srinuvas', 'Narasimha rao', 'Subaravu', 'Gopala Krishna']
+
+//delete first item
+        Array.shift()
+        console.log(Array); //['Narasimha rao', 'Subaravu', 'Gopala Krishna']
+ //add first item 
+  Array.unshift("Ram babu");
+  console.log(Array);// ['Ram babu', 'Narasimha rao', 'Subaravu', 'Gopala Krishna']
+  // sorting
+  Array.sort();
+  console.log(Array); //  ['Gopala Krishna', 'Narasimha rao', 'Ram babu', 'Subaravu']
+  // reverese
+   Array.reverse();
+   console.log(Array); // ['Subaravu', 'Ram babu', 'Narasimha rao', 'Gopala Krishna']
+   let index =Array.indexOf("Naveen");
+   console.log(index)//-1
+   //splice
+   Array.splice(2,1,"Gop",'nop')
+   console.log(Array); // ['Subaravu', 'Ram babu', 'Gop', 'nop', 'Gopala Krishna']
+ 
+   
+
+   // spread operater
+
+   let fruits=["mango","banana","orange","mango"];
+   let vegtables=["tamato","carrots","bottlegod"];
+   let food=[...fruits,...vegtables,"eggs","milk"];
+    food=new Set(food)
+   console.log(food);
+   
+   
+   
+   
+   
+  
+        
+
+        
+    </script>
+    
+</body>
+</html>

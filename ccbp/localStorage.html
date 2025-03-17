@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <textarea type="text" id="area" rows="10" cols="55"></textarea><br>
+    <button id="button"  class="btn btn-primary">Save</button>
+    <script>
+
+        // used local storage setItem() method used
+        let btn=document.getElementById('button')
+        let localArea=document.getElementById('area')
+
+          btn.onclick=function(){
+         let userText=localArea.value;
+         localStorage.setItem("userText",userText)
+};
+
+// local storage getItem() method used
+
+let storage=localStorage.getItem('userText');
+if (storage===null) {
+    localArea.value="";
+}
+
+else {
+    localArea.value=storage;
+
+}
+
+    </script>
+    
+</body>
+</html>

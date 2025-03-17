@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Document </title>
+</head>
+<body>
+<script>
+        let now=new Date();
+let  date= now.getDate()+"/"+(now.getMonth()+1)+"/"+now.getFullYear();
+let time=now.getHours()+":"+now.getMinutes()+":"+now.getSeconds();
+console.log(date);
+console.log(time);
+
+//Write a script that prompt the user to enter base and height of the triangle and calculate an area of a triangle (area = 0.5 x b x h).
+let height=10;
+let base=20;
+let areaOfTriangel=0.5*base*height;
+console.log(areaOfTriangel);
+
+//Write a script that prompt the user to enter side a, side b, and side c of the triangle and and calculate the perimeter of triangle (perimeter = a + b + c)
+
+let sideA=prompt("enter SideA");
+let sideB=prompt("enter SideB");
+let sideC=prompt("enter SideC");
+let perimet=Number(sideA)+Number(sideB)+Number(sideC);
+console.log(perimet);
+ </script>
+</body>
+</html>S

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+        }
+        .left{
+            text-align: left;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button class="left" id="demo1" onclick="closed(this)">button-1</button>
+        <button class="left" id="demo2" onclick="closed(this)">button-2</button>
+        <button class="left" id="demo3" onclick="closed(this)">button-3</button>
+        <button class="left" id="demo4" onclick="closed(this)">button-4</button>
+        <button class="left" id="demo5" onclick="closed(this)">button-5</button>
+        <button class="left" id="demo6" onclick="closed(this)">button-6</button>
+    </div>
+    <script>
+        // Function to hide the clicked button
+        function closed(button) {
+            button.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

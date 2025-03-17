@@ -1,0 +1,77 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="closeButton()">Click Me</button>   
+    <script>
+        let myWindow;
+        function closeButton() {
+            myWindow.close();
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        div{
+  color: rgb(122, 42, 165);
+  display: block;
+  flex-direction: row;
+  font-size: large;
+  text-align: center;
+  border: solid 1px;
+
+  
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>    <h1 id="demo">0</h1>
+        <button type="button" onclick="increment(1)">increment 1</button>
+        <button type="button" onclick="increment(2)">increment 2</button>
+        <button type="button" onclick="increment(3)">increment 3</button>
+        <button type="button" onclick="increment(4)">increment 4</button>
+        <button type="button" onclick="increment(5)">increment 5</button>
+        <button type="button" onclick="increment(6)">increment 6</button>
+        <button type="button" onclick="increment(7)">increment 7</button>
+        <button type="button" onclick="increment(8)">increment 8</button>
+        <button type="button" onclick="increment(9)">increment 9</button>
+        <button type="button" onclick="increment(0)">increment 0</button>
+
+        <!-- <button type="button" onclick="increment(5)">increment 5</button> -->
+        <button type="button" onclick="reset()">Reset</button>
+        <!-- <button type="button" onclick="decrement(1)">Decrement 1</button> -->
+        <!-- <button type="button" onclick="decrement(5)">Decrement 5</button> -->
+    </div>
+    <script>
+var count=0;
+        function increment(num) {
+            count=num;
+            document.getElementById("demo").innerHTML=count;
+
+        }
+        function decrement(num) {
+            count-=num;
+            document.getElementById("demo").innerHTML=count;
+
+        }
+        function reset() {
+            count=0;
+            document.getElementById("demo").innerHTML=count;
+
+        }
+    </script>
+    
+</body>
+</html>
+

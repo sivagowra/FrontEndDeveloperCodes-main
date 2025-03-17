@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="myp">Hello</p>
+    <p id="cnt" >0</p>
+    <button type="button" id="mybtn">Click Me</button>
+    <script>
+       let count=1;
+        const mybtn=document.getElementById('mybtn');
+        const myp=document.getElementById('myp');
+        const cnt=document.getElementById('cnt');
+
+         mybtn.onclick=function() {
+            cnt.textContent=count++;
+            myp.textContent="hello Uv"
+            myp.style.fontSize='30px'
+            myp.style.color='red'
+            
+         }  
+         function fontChange(){
+            
+         }      
+            </script>
+</body>
+</html>

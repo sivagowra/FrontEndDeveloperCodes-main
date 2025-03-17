@@ -1,0 +1,4 @@
+let sum = 0;
+const numbers = [1, 2, 3, 4, 5];
+numbers.forEach(num => console.log((num)*0))
+console.log(sum)

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>submit Page</title>
+</head>
+<style>
+    *{
+        text-align: center;
+    }
+    h1{
+        font-size: xx-large;
+        font-family: 'Courier New', Courier, monospace;
+        background-color: aliceblue;
+        color: blue;
+    }
+    p{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-style: italic;
+        color: brown;
+    }
+</style>
+<body>
+    <h1>Successfully Application Submit</h1>
+    <p id="demo"></p>
+    
+</body>
+<script>
+            // Retrieve form data from the URL
+
+    let params=new URLSearchParams(window.location.search);
+    let username=params.get('username');
+    let email=params.get('email');
+    let phoneNumber=params.get('phoneNumber');
+    let gender=params.get('gender');
+    let dropdown=params.get('dropdown');
+
+        // Create and display the data
+
+        let data=document.getElementById('demo');
+        data.innerHTML=`
+        <p><strong>Username:</strong> ${username || "N/A"}</p>
+            <p><strong>Email:</strong> ${email || "N/A"}</p>
+            <p><strong>Phone:</strong> ${phoneNumber || "N/A"}</p>
+            <p><strong>Gender:</strong> ${gender || "N/A"}</p>
+            <p><strong>Selected Programming Language:</strong> ${dropdown || "N/A"}</p>
+        `;
+
+
+</script>
+</html>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Message</title>
+</head>
+<body>
+    <input id="demo" min="100" max="300" type="number" required>
+    <button type="button" onclick="myFunction()">Ok</button>
+    <p id="Demo"></p>
+    <p id="Demo1"></p>
+    <p id="Demo2"></p>
+<script>
+   
+    function myFunction(){
+        const obj=document.getElementById("demo");
+        if(!obj.checkValidity()){
+            //Constraint Validation DOM Properties
+            
+            document.getElementById("Demo").innerHTML=obj.validationMessage;
+            document.getElementById("Demo1").innerHTML=obj.willValidate;
+            document.getElementById("Demo2").innerHTML=obj.validity;
+
+
+
+        }
+        else {
+            document.getElementById("Demo").innerHTML='Input Ok';
+
+
+        }
+
+    }
+
+</script>  
+</body>
+</html>

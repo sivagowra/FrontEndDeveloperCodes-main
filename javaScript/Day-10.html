@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sets and map</h1>
+<script>
+
+    //Set()
+const a= new Set();
+console.log(a);
+const langvages=["c","c++","python","javascript","typeScript","c","c++","python","javascript","typeScript"];
+console.log(langvages);
+const setOflangavages=new Set(langvages);
+console.log(setOflangavages.size);
+for (let langvage of setOflangavages) {
+    console.log(langvage.length);
+    
+}
+const b= new Set();
+console.log(b.size);
+b.add("Siva");
+b.add("ravi");
+b.add(24);
+b.delete("ravi");
+console.log(b.has(24))
+b.clear();
+
+console.log(b);
+
+//Map()
+//Map()
+
+const map=new Map();
+console.log(Map);
+countries = [
+    ['Finland', 'Helsinki'],
+    ['Sweden', 'Stockholm'],
+    ['Norway', 'Oslo'],
+  ]
+  const map1=new Map(countries);
+  console.log(map1);
+  
+
+
+    </script>
+    
+</body>
+</html>

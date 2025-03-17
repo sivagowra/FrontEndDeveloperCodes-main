@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter program</title>
+    <style>
+        body{
+            width: 400px;
+            height: 200px;
+            border: 1px solid purple;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .btn{
+            background-color: rgb(245, 153, 208);
+            padding: 15px;
+            border-radius: 15px;
+            color: white;
+        
+        }
+        .btn:hover{
+            background-color: rgb(241, 9, 148);
+        }
+    </style>
+</head>
+<body >
+    <div>
+        <p id="counterLabel" style="font-size: 40px;">0</p>
+        <button type="button" id="incrementBtn" class="btn">Increment</button>
+        <button type="button" id="resetBtn" class="btn">Reset</button>
+        <button type="button" id="decrementBtn" class="btn">Decrement</button>
+
+    </div>
+    <script>
+        const decrementBtn=document.getElementById("decrementBtn");
+        const incrementBtn=document.getElementById("incrementBtn");
+        const resetBtn=document.getElementById("resetBtn");
+        const counterLabel=document.getElementById("counterLabel");
+        
+
+        let count=0;
+        function updateCounter() {
+            if (count > 0) {
+                counterLabel.style.color = "red";
+            } else if (count < 0) {
+                counterLabel.style.color = "green";
+            } else {
+                counterLabel.style.color = "black";
+            }
+        }
+        incrementBtn.onclick=function(){
+            count++;
+        counterLabel.textContent =count;   
+        updateCounter(counterLabel) 
+       }
+       decrementBtn.onclick=function(){
+            count--;
+        counterLabel.textContent =count;    
+        updateCounter(counterLabel) 
+
+       } 
+       resetBtn.onclick=function(){
+            count=0;
+        counterLabel.textContent =count;    
+        updateCounter(counterLabel) 
+
+       }
+        
+    </script>
+</body>
+</html>

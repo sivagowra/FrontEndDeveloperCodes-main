@@ -1,0 +1,59 @@
+<!-- // console.log(!![]);
+// console.log(!!{});
+// let a=[x,y=10]=[5];
+// console.log(x+y);
+// console.log(a); -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method Change</title>
+</head>
+<body>
+    <h1>Hello Siva</h1>
+    <script>
+
+        // No Method Chaining 
+
+        let useName=prompt("Enter Your Name:");
+        useName=useName.trim()
+        let firstLetter=useName.charAt(0);
+        firstLetter=firstLetter.toUpperCase()
+        let extraLetters=useName.slice(1);
+        extraLetters=extraLetters.toLowerCase()
+        let FullName=firstLetter+extraLetters;
+        document.write(FullName) 
+        
+
+//method chaining
+ useName=useName.trim().charAt(0).toUpperCase()+useName.trim().slice(1).toLowerCase();
+ console.log(useName);
+ 
+let newName;
+
+// while loop = repeat some code  while  some condition is true
+while(newName==="" || newName===null){
+newName=prompt("Enter Yours Name")
+}
+document.write(newName)
+console.log(newName);
+
+
+ let newNames;
+
+// Do while loop = repeat some code  do while 1 time executed
+do{
+newNames=prompt("Enter Yourss Name");
+}while(newNames==="" || newNames===null)
+document.write(newNames)        
+console.log(newNames);
+
+
+
+    </script>
+    
+</body>
+</html>

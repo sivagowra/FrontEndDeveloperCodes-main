@@ -1,0 +1,34 @@
+<!-- // Local And  Global -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local And Global Scope</title>
+ </head>
+ <body>
+    <script>
+        // variable  scope=where a variable is Recognized and accessible (local vs global)
+
+        let y=4;
+
+        function function1(){
+            let x=20;
+            console.log(x,y);
+            document.write(x,y)
+
+  
+        }
+        function function2(){
+            let x=30;
+            console.log(x,y);
+            document.write(x,y)
+            
+        }
+        function1()
+        function2()
+
+
+    </script>
+ </body>
+ </html>
