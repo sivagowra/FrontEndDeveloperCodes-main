@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scripting Used To chnage p tag color, size and textContent</title>
+</head>
+<body>
+    <div>
+        <h1>Wel Come!</h1>
+        <p>Hello Siva</p>
+    </div>
+    <script>
+        let Ptag=document.querySelector('p');
+        Ptag.addEventListener('click',()=>{
+            Ptag.innerText='this has been changed';
+            Ptag.style.color='blue';
+            Ptag.style.fontSize="30px"
+        })
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser throttling</title>
+</head>
+<body>
+<script>
+    //Browser throttling is a technique used to simulate
+    //  slower network speeds or limit CPU performance in
+    //  web development. It helps developers test how a
+    //  website or web app behaves under slow internet 
+    // conditions or low-performance devices.
+
+    let num = 0;
+    setInterval(()=>{
+        console.log(num++);
+        
+    },1000)
+
+
+
+
+ //varibale decreation
+ 
+ function test(){
+    x=20;
+    console.log(x);
+    
+ }
+ let x;
+ test() //20
+
+ function test1(){
+    y=20;
+    console.log(x);
+    
+ }
+ test1() // reference type error
+ let y;
+
+
+
+</script>
+    
+</body>
+</html>

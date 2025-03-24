@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New year Date </title>
+</head>
+<body>
+    <h1 id="TimeCounter"></h1>
+    <script>
+        let count=document.getElementById('TimeCounter');
+        function upDateTime() {
+            let now=new Date();
+            const newDate=new Date(now.getFullYear()+1,0,1);
+        const timeLeft=newDate - now;
+        const days=Math.floor(timeLeft/(1000*60*60*24)); //days
+        const hour=Math.floor(timeLeft % (1000*60*60*24)/(1000*60*60)) //hour
+        const Min=Math.floor(timeLeft % (1000*60*60)/(1000*60)) //min
+        const Sec=Math.floor(timeLeft % (1000*60)/(1000)) //sec
+        count.textContent = `${days} Days ${hour} Hours ${Min} Minutes ${Sec} Seconds`; // display time
+
+
+        }
+
+        setInterval(upDateTime,1000);
+    </script>
+    
+</body>
+</html>
