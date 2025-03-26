@@ -11,7 +11,7 @@
         }
         p {
             border: 1px solid red;
-            width: 100px; /* Fixed width */
+            width: 1000px; /* Fixed width */
             height: 100px; /* Fixed height */
             margin: 10px;
             font-style: italic;
@@ -25,7 +25,7 @@
             line-height: 1.2;
         }
         p span {
-            white-space: normal; /* Allow wrapping of text */
+            white-space: normal; 
             word-wrap: break-word;
             display: inline-block;
             text-align: center;
@@ -42,15 +42,13 @@
                 const parent = el.parentElement;
                 const maxFontSize = 30;
                 const minFontSize = 3;
-                let fontSize = maxFontSize; // Start with the maximum font size
+                let fontSize = maxFontSize; 
 
-                // Reduce font size until content fits within the box
                 while ((el.scrollHeight > parent.offsetHeight || el.scrollWidth > parent.offsetWidth) && fontSize > minFontSize) {
                     fontSize--;
                     el.style.fontSize = fontSize + "px";
                 }
 
-                // If the content fits, ensure font size doesn't exceed maxFontSize
                 el.style.fontSize = Math.min(fontSize, maxFontSize) + "px";
             });
         }
@@ -58,7 +56,7 @@
 </head>
 <body>
     <div class="continer">
-        <p><span>flex-direction:row stacks the flex items horizontallyrow stacks the flex items horizontallyrow stacks the flex items horizontallyrow stacks the flex items horizontally rowrow stacks the flex items horizontallyrow stacks the flex items horizontally</span></p>
+        <p><span>flex-direction:row stacks the flex items horizontally row stacks the flex items horizontallyrow stacks the flex items horizontallyrow stacks the flex items horizontally rowrow stacks the flex items horizontallyrow stacks the flex items horizontally</span></p>
         <p><span>flex-direction: row stacks the flex items horizontally</span></p>  
         <p><span>flex-direction: row stacks the flex items horizontally</span></p>
     </div>

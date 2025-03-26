@@ -154,6 +154,57 @@ for(var i=0;i<10;i++){
     })
 }
 
+// arrays are created by values pointed to arrays diiferent locations in array  it will return false
+console.log([]==[]); // false
+
+// 0 to 3 empty or undefined  forEach value concered to values
+const cp=[];
+cp[4]=1;
+cp.forEach((i)=>{
+    console.log("Hi");
+    
+})//Hi
+
+// 
+zp++
+console.log(zp);
+var zp=21;// NaN
+
+const name1="Rama krishna";
+age1=21;
+console.log(delete name1); //false
+console.log(delete age1);  // true
 
 
+let newList =[1].push(2);
+// console.log(newList.push(3)); //type error
 
+
+const arr2=[1,2,3];
+const str2="1,2,3";
+console.log(arr2==str2);//true
+
+yq=10;
+var xy=1+yq;
+console.log(xy); //11
+
+let xp=10>9>8;
+console.log(xp===true); // false
+
+console.log(3+4+"5"); // 75
+
+
+var per={
+    name:"siva",
+    hello: function() {
+        console.log(this.name);
+        
+    }
+}
+per.hello(); //siva
+
+function sum(a=5,b=4){
+    console.log(a+b);
+    
+}
+sum(null,20)//20
