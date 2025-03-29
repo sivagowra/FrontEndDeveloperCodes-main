@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Expandable Boxes</title>
+        <style>
+            * {
+                font-size: 10px;
+            }
+            body {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 20px;
+                font-size: 10px;
+            }
+            .box {
+                align-items: top;
+                width: 200px;
+                height: 50px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                background-color: #f2f3ef;
+                transition: height 0.3s ease-in-out;
+                overflow: hidden;
+                cursor: pointer;
+            }
+            .box.expanded {
+                height: 120px;
+            }
+            .justufy {
+                display: flex;
+                justify-content: space-between;
+            }
+            .row {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+            }
+            button {
+                padding: 4px;
+                background-color: green;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+            #cart {
+                margin-top: 20px;
+                border: 1px solid #ccc;
+                padding: 10px;
+                width: 250px;
+                background: #f0f0f0;
+            }
+            .box:hover {
+                border: green 1px solid;
+            }
+            .size,
+            .color {
+                font-size: 10px;
+            }
+            #totalAmount {
+                font-size: 12px;
+                color: rgb(21, 21, 21);
+            }
+            .left {
+                margin-left: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box font" onclick="expandBox(this)">
+            <label> <input type="radio" name="pair" value="1 Pair" data-price="195" /> 1 Pair </label>
+            <p class="justufy">
+                <span class="left">GSN: 195.00</span>
+                <span>50% OFF</span>
+            </p>
+            <div class="row left">
+                <p>
+                    <label>
+                        Size:
+                        <br />
+                        <select class="size">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+                        <br />
+                        <br />
+                        <select class="size">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Color:
+                        <br />
+                        <select class="color">
+                            <option>Red</option>
+                            <option>Blue</option>
+                            <option>Green</option>
+                        </select>
+                        <br />
+                        <br />
+                        <select class="color">
+                            <option>Red</option>
+                            <option>Blue</option>
+                            <option>Green</option>
+                        </select>
+                    </label>
+                </p>
+            </div>
+        </div>
+
+        <div class="box font" onclick="expandBox(this)">
+            <div style="display: flex; justify-content: space-between;">
+                <label> <input type="radio" name="pair" value="2 Pair" data-price="500" /> 2 Pair </label>
+                <p style="margin: 0; color: green;">Most popular</p>
+            </div>
+
+            <p class="justify" style="display: flex; justify-content: space-between;">
+                <span class="left">GSN: 500.00</span>
+                <span>40% OFF</span>
+            </p>
+
+            <div class="row left">
+                <p>
+                    <label>
+                        Size:
+                        <br />
+                        <select class="size">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+                        <br />
+                        <br />
+                        <select class="size">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+                    </label>
+                </p>
+
+                <p>
+                    <label>
+                        Color:
+                        <br />
+                        <select class="color">
+                            <option>Red</option>
+                            <option>Blue</option>
+                            <option>Green</option>
+                        </select>
+                        <br />
+                        <br />
+                        <select class="color">
+                            <option>Red</option>
+                            <option>Blue</option>
+                            <option>Green</option>
+                        </select>
+                    </label>
+                </p>
+            </div>
+        </div>
+
+        <div class="box font" onclick="expandBox(this)">
+            <label> <input type="radio" name="pair" value="3 Pair" data-price="800" /> 3 Pair </label>
+            <p class="justufy">
+                <span class="left">GSN: 800.00</span>
+                <span>60% OFF</span>
+            </p>
+            <div class="row left">
+                <p>
+                    <label>
+                        Size:
+                        <br />
+                        <select class="size">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+                        <br />
+                        <br />
+                        <select class="size">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Color:
+                        <br />
+                        <select class="color">
+                            <option>Red</option>
+                            <option>Blue</option>
+                            <option>Green</option>
+                        </select>
+                        <br />
+                        <br />
+                        <select class="color">
+                            <option>Red</option>
+                            <option>Blue</option>
+                            <option>Green</option>
+                        </select>
+                    </label>
+                </p>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; width: 220px;">
+            <p style="flex: 1; color: green;">Free 2 Days Shopping</p>
+            <p style="flex: 1; text-align: right;">Total: GSN <span id="totalAmount">0</span></p>
+        </div>
+
+        <button style="width: 200px;" onclick="addToCart()">Add to Cart</button>
+
+        <div id="cart" style="display: none;">
+            <h3>Cart Items:</h3>
+            <ul id="cartList"></ul>
+        </div>
+
+        <script>
+            let cartItems = [];
+            let totalAmount = 0;
+
+            function expandBox(selectedBox) {
+                // Collapse all boxes first
+                document.querySelectorAll(".box").forEach((box) => {
+                    box.classList.remove("expanded");
+                });
+
+                // Expand the clicked box
+                selectedBox.classList.add("expanded");
+            }
+
+            function addToCart() {
+                const selectedPair = document.querySelector('input[name="pair"]:checked');
+                if (!selectedPair) {
+                    alert("Please select a pair option!");
+                    return;
+                }
+
+                const selectedSize = selectedPair.closest(".box").querySelector(".size").value;
+                const selectedColor = selectedPair.closest(".box").querySelector(".color").value;
+                const pairPrice = parseInt(selectedPair.dataset.price);
+
+                const item = {
+                    pair: selectedPair.value,
+                    size: selectedSize,
+                    color: selectedColor,
+                    price: pairPrice,
+                };
+
+                cartItems.push(item);
+                totalAmount += pairPrice;
+                updateCartUI();
+            }
+
+            function updateCartUI() {
+                const cartList = document.getElementById("cartList");
+                const totalAmountDisplay = document.getElementById("totalAmount");
+                cartList.innerHTML = "";
+                cartItems.forEach((item, index) => {
+                    cartList.innerHTML += `<li>${item.pair} - Size: ${item.size}, Color: ${item.color} 
+                    ($${item.price}) <button onclick="removeItem(${index})">Remove</button></li>`;
+                });
+
+                totalAmountDisplay.innerText = totalAmount;
+            }
+
+            function removeItem(index) {
+                totalAmount -= cartItems[index].price;
+                cartItems.splice(index, 1);
+                updateCartUI();
+            }
+        </script>
+    </body>
+</html>

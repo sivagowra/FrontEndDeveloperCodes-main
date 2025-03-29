@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flex Box Layouts</title>
+        <style>
+            body{
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                border: 1px solid;
+                margin: 10px;
+                padding: 20px;
+            }
+            p {
+                width: 80px;
+                height: 50px;
+                background-color: white;
+                color: blue;
+                border: 1px solid;
+                margin: 10px;
+                color: black;
+                background-color: pink;
+            }
+            .row {
+                display: flex;
+                flex-direction: row;
+                border: 1px solid;
+            }
+            .space {
+                display: flex;
+                justify-content: space-around;
+                align-items: flex-start;
+            }
+            .equal {
+                display: flex;
+                flex: 1;
+            }
+
+            h1 {
+                color: red;
+            }
+            .col {
+                display: flex;
+                flex-direction: column;
+            }
+            span {
+                font-size: larger;
+                color: red;
+            }
+            @media (max-width: 800px) {
+                .row {
+                    flex-direction: column;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Row wise flex -->
+        <h1>Row wise items arraged left side</h1>
+        <div class="row">
+            <p>item-1</p>
+            <p>item-2</p>
+            <p>item-3</p>
+        </div>
+        <h1>Row wise items arraged center</h1>
+        <div class="row" style="justify-content: center;">
+            <p>item-1</p>
+            <p>item-2</p>
+            <p>item-3</p>
+        </div>
+        <h1>Row wise items arraged right side</h1>
+        <div class="row" style="justify-content: end; align-items: stretch;">
+            <p>item-1</p>
+            <p>item-2</p>
+            <p>item-3</p>
+        </div>
+        <h1>Equal sapce aceesing boxes</h1>
+
+        <div class="row">
+            <p class="equal">item-1</p>
+            <p class="equal">item-2</p>
+            <p class="equal">item-3</p>
+        </div>
+
+        <h1>width wuse sapce aceesing boxes</h1>
+
+        <div class="row">
+            <p style="flex-grow: 2;">item-20%</p>
+            <p style="flex-grow: 3;">item-30%</p>
+            <p style="flex-grow: 5;">item-50%</p>
+        </div>
+        <h1>sapce around boxes</h1>
+
+        <div class="row space">
+            <p class="">item-1</p>
+            <p class="">item-2</p>
+            <p class="">item-3</p>
+        </div>
+
+        <div style="display: flex; flex: 1; justify-content: space-between;">
+            <!-- colum wise -->
+
+            <div class="col">
+                <p class="">item-1</p>
+                <p class="">item-2</p>
+                <p class="">item-3</p>
+                <span>Column Wise</span>
+            </div>
+
+            <div class="col" style="flex-direction: column-reverse;">
+                <span>Column Reverese</span>
+                <p class="">item-1</p>
+                <p class="">item-2</p>
+                <p class="">item-3</p>
+            </div>
+            <div class="col">
+                <p style="order: 2;">item-1</p>
+                <p style="order: 3;">item-2</p>
+                <p style="order: 1;">item-3</p>
+                <span style="order: 4;">Order property</span>
+            </div>
+        </div>
+        <h1>screen size Adj</h1>
+
+        <section class="row" style="height: 250px;">
+            <p class="equal" style="width: 100px; height: 100px;">item-1</p>
+            <p class="equal" style="width: 100px; height: 100px;">item-2</p>
+            <p class="equal" style="width: 100px; height: 100px;">item-3</p>
+            <p class="equal" style="width: 100px; height: 100px;">item-4</p>
+
+        </section>
+    </body>
+</html>

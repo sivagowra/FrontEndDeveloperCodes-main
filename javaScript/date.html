@@ -82,14 +82,14 @@
             let minutes = d.getMinutes();
             let seconds = d.getSeconds();
             let ampm = hours >= 12 ? 'PM' : 'AM';
-            hours = hours % 12 || 12; // Convert to 12-hour format
+            hours = hours % 12 || 12; 
             minutes = minutes < 10 ? '0' + minutes : minutes;
             seconds = seconds < 10 ? '0' + seconds : seconds;
             let date = d.toLocaleDateString('en-GB', {
                 day: '2-digit',
                 month: '2-digit',
                 year: 'numeric'
-            }).replace(/\//g, '-'); // Convert date format to DD-MM-YYYY
+            }).replace(/\//g, '-'); 
             document.getElementById('demo').innerHTML = `${date}<br>${hours}:${minutes}:${seconds} ${ampm}`;
         }
         

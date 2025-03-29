@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expandable Boxes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .box {
+            width: 300px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            cursor: pointer;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease-in-out;
+        }
+        .expanded {
+            background-color: #e0f7fa;
+        }
+        .options {
+            margin-top: 10px;
+            display: none;
+        }
+        .show {
+            display: block;
+        }
+        .submit-container {
+            margin-top: 20px;
+        }
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" onclick="toggleBox(0)">
+        <h3>1 Pair</h3>
+        <div class="options" id="options-0">
+            <label>Size:
+                <select>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                </select>
+            </label>
+            <label>Color:
+                <select>
+                    <option>Red</option>
+                    <option>Blue</option>
+                    <option>Green</option>
+                </select>
+            </label>
+        </div>
+    </div>
+
+    <div class="box" onclick="toggleBox(1)">
+        <h3>2 Pairs</h3>
+        <div class="options" id="options-1">
+            <label>Size:
+                <select>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                </select>
+            </label>
+            <label>Color:
+                <select>
+                    <option>Red</option>
+                    <option>Blue</option>
+                    <option>Green</option>
+                </select>
+            </label>
+        </div>
+    </div>
+
+    <div class="box" onclick="toggleBox(2)">
+        <h3>3 Pairs</h3>
+        <div class="options" id="options-2">
+            <label>Size:
+                <select>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                </select>
+            </label>
+            <label>Color:
+                <select>
+                    <option>Red</option>
+                    <option>Blue</option>
+                    <option>Green</option>
+                </select>
+            </label>
+        </div>
+    </div>
+
+    <div class="submit-container">
+        <button class="submit-btn">+ Add to Cart</button>
+    </div>
+
+    <script>
+        function toggleBox(index) {
+            let options = document.getElementById('options-' + index);
+            options.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
