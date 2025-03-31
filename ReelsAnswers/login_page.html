@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: rgba(24, 23, 23, 0.354);
+            font-size: 15px;
+        }   
+        
+        /* div:hover{
+            width: 300px;
+            height: 300px;
+            background-color: rgba(24, 23, 23, 0.354);
+            font-size: 15px;
+        } 
+         */
+html{
+  font-family: Poppins;
+  color: #f0f0f0;
+}
+body{
+  min-height: 100vh;
+  background: #0b0d15;
+  color: #a2a5b3;
+  align-content: center;
+}
+h1{
+  color: white;
+}
+.card{
+  margin: 0 auto;
+  padding: 2em;
+  background: #1c1f2b;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+  
+}
+
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card::after, .card::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle),  aqua,black, #f50a0e,aqua,black, #f50a0e);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;   
+  z-index: -1;
+  padding: 12px;
+  border-radius: 20px;
+  animation: 6s spin linear infinite;
+}
+.card::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+    </style>
+</head>
+
+<body style="display: flex; justify-content: center; padding: 100px;">
+    <section>
+        <div>
+            <form >
+                <div style="display: flex; justify-content: center; flex-direction: column;"> 
+                    <div style="padding-top: 20px; outline: #111211 solid 10px; padding:20px solid black;" class="card" >
+                         <h1 style="color:aliceblue; text-align:center;">LOGIN</h1>
+                        <input type="text" 
+                        id="username" 
+                        name="username" 
+                        placeholder="username" 
+                        style="width:200px; font-size: 15px; border-radius: 20px; padding-left: 10px; margin-left:20px; padding: 10px; background-color: rgba(24, 23, 23, 0.354); color: white; border: white 1px solid;"><br><br>
+                        <input type="password" 
+                        id="pwd" 
+                        name="pwd" 
+                        placeholder="password" 
+                        style="width:200px; font-size: 15px; border-radius: 20px; padding-left: 10px; margin-left:20px; padding: 10px; background-color: rgba(24, 23, 23, 0.354); color: white; border: white 1px solid;"><br><br>
+                        <button type="button" value="Sign In" style="background-color: aqua;width: 180px; border-radius: 20px;padding: 10px;margin-left:10px; border: 1px solid aqua;">Sign In</button><br>
+                        <p style="display: flex; justify-content: space-around;"> <span style="color:white">Forgot password</span><span style="color:hsl(0, 89%, 49%)">Sign Up</span>
+                        </p>
+
+                    </div>
+                </div>
+                </form>
+             </div>
+    </section>
+    
+</body>
+</html>
