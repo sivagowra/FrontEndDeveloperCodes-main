@@ -58,11 +58,28 @@ n++;
 console.log(n);
 var n=10; //NaN
 
+m++;
+console.log(m);
+let n=10;  //ReferenceError (let or const)
+
+const aw=10;
+aw++;
+console.log(aw); //TypeError: Assignment to constant variable.
+
+
 function data(){
     let t=q=10;
 }
 data()
 console.log(q); //10
+console.log(t); //ReferenceError: b is not defined
+
+function data1(){
+     t1=q1=10;
+}
+data1()
+console.log(q1); //10
+console.log(t1);//10
 
  setTimeout(()=>{
     console.log("1");
@@ -99,7 +116,11 @@ console.log(bb.substring(5,1));// earn
 // empty array trated as 0
 let ab=[];
 let bc=false;
-console.log(ab==bc); // true
+console.log(ab==bc);
+
+let ab1={};
+let bc1=false;
+console.log(ab1==bc1); // false
 
 // object  last name is over ride
 
