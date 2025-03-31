@@ -3,108 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Spinning Login</title>
     <style>
-       
-        div{
-            width: 300px;
-            height: 300px;
-            background-color: rgba(24, 23, 23, 0.354);
-            font-size: 15px;
-        }   
+        * {
+            font-family: Poppins, sans-serif;
+            color: #f0f0f0;
+        }
+        body {
+            min-height: 100vh;
+            background: #0b0d15;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         
-        /* div:hover{
-            width: 300px;
+        @property --angle {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        .card, .login-form {
+            padding: 2em;
+            background: #1c1f2b;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            position: relative;
+            transition: opacity 0.5s ease-in-out, transform 0.3s;
+        }
+
+        .card::after, .card::before,
+        .login-form::after, .login-form::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: conic-gradient(from var(--angle), aqua, black, #f50a0e, aqua, black, #f50a0e);
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;   
+            z-index: -1;
+            padding: 12px;
+            border-radius: 20px;
+            animation: spin 6s linear infinite;
+        }
+
+        .card::before, .login-form::before {
+            filter: blur(1.5rem);
+            opacity: 0.5;
+        }
+
+        @keyframes spin {
+            from { --angle: 0deg; }
+            to { --angle: 360deg; }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .login-form {
+            width: 250px;
             height: 300px;
-            background-color: rgba(24, 23, 23, 0.354);
             font-size: 15px;
-        } 
-         */
-html{
-  font-family: Poppins;
-  color: #f0f0f0;
-}
-body{
-  min-height: 100vh;
-  background: #0b0d15;
-  color: #a2a5b3;
-  align-content: center;
-}
-h1{
-  color: white;
-}
-.card{
-  margin: 0 auto;
-  padding: 2em;
-  background: #1c1f2b;
-  text-align: center;
-  border-radius: 10px;
-  position: relative;
-  
-}
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            outline: 10px solid #111211;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
 
+        input, button {
+            width: 200px;
+            font-size: 15px;
+            border-radius: 20px;
+            padding: 10px;
+            background-color: rgba(24, 23, 23, 0.354);
+            color: white;
+            border: white 1px solid;
+            margin: 10px auto;
+            display: block;
+        }
 
-@property --angle{
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
+        button {
+            background-color: aqua;
+            border: 1px solid aqua;
+            cursor: pointer;
+        }
 
-.card::after, .card::before{
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-image: conic-gradient(from var(--angle),  aqua,black, #f50a0e,aqua,black, #f50a0e);
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;   
-  z-index: -1;
-  padding: 12px;
-  border-radius: 20px;
-  animation: 6s spin linear infinite;
-}
-.card::before{
-  filter: blur(1.5rem);
-  opacity: 0.5;
-}
-@keyframes spin{
-  from{
-    --angle: 0deg;
-  }
-  to{
-    --angle: 360deg;
-  }
-}
+        p {
+            display: flex;
+            justify-content: space-around;
+        }
+
     </style>
 </head>
 
-<body style="display: flex; justify-content: center; padding: 100px;">
-    <section>
-        <div>
-            <form >
-                <div style="display: flex; justify-content: center; flex-direction: column;"> 
-                    <div style="padding-top: 20px; outline: #111211 solid 10px; padding:20px solid black;" class="card" >
-                         <h1 style="color:aliceblue; text-align:center;">LOGIN</h1>
-                        <input type="text" 
-                        id="username" 
-                        name="username" 
-                        placeholder="username" 
-                        style="width:200px; font-size: 15px; border-radius: 20px; padding-left: 10px; margin-left:20px; padding: 10px; background-color: rgba(24, 23, 23, 0.354); color: white; border: white 1px solid;"><br><br>
-                        <input type="password" 
-                        id="pwd" 
-                        name="pwd" 
-                        placeholder="password" 
-                        style="width:200px; font-size: 15px; border-radius: 20px; padding-left: 10px; margin-left:20px; padding: 10px; background-color: rgba(24, 23, 23, 0.354); color: white; border: white 1px solid;"><br><br>
-                        <button type="button" value="Sign In" style="background-color: aqua;width: 180px; border-radius: 20px;padding: 10px;margin-left:10px; border: 1px solid aqua;">Sign In</button><br>
-                        <p style="display: flex; justify-content: space-around;"> <span style="color:white">Forgot password</span><span style="color:hsl(0, 89%, 49%)">Sign Up</span>
-                        </p>
+<body>
+    <section id="toggleContainer">
+        <!-- Initial "LOGIN" Card -->
+        <section class="card" id="loginCard">
+            <h1>LOGIN</h1>
+        </section> 
 
-                    </div>
-                </div>
-                </form>
-             </div>
+        <!-- Login Form (Initially Hidden) -->
+        <div class="login-form hidden" id="loginForm">
+            <form>
+                <h1 style="color:aliceblue;">LOGIN</h1>
+                <input type="text" id="username" name="username" placeholder="Username">
+                <input type="password" id="pwd" name="pwd" placeholder="Password">
+                <button type="button">Sign In</button>
+                <p>
+                    <span>Forgot password</span>
+                    <span style="color:hsl(0, 89%, 49%)">Sign Up</span>
+                </p>
+            </form>
+        </div>
     </section>
-    
+
+    <script>
+        let container = document.getElementById("toggleContainer");
+        let loginCard = document.getElementById("loginCard");
+        let loginForm = document.getElementById("loginForm");
+
+        // Hover behavior to switch between card & form
+        container.addEventListener("mouseenter", function () {
+            loginCard.classList.add("hidden");
+            loginForm.classList.remove("hidden");
+            setTimeout(() => { loginForm.style.opacity = "1"; }, 100);
+        });
+
+        container.addEventListener("mouseleave", function () {
+            loginForm.style.opacity = "0";
+            setTimeout(() => {
+                loginCard.classList.remove("hidden");
+                loginForm.classList.add("hidden");
+            }, 400); // Wait for fade-out before switching
+        });
+    </script>
 </body>
 </html>
