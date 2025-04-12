@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tag</title>
+    <style>
+        #form2 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Login Form -->
+    <form id="form1">
+        <label for="fullname">FullName</label><br>
+        <input type="text" id="fullname" name="fullname" required><br>
+        <label for="password">Password</label><br>
+        <input type="password" id="password" name="password" ><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Details Form -->
+    <form id="form2">
+        <label for="firstName">First Name</label><br>
+        <input type="text" id="firstName" name="firstName" required><br>
+        <label for="lastName">Last Name</label><br>
+        <input type="text" id="lastName" name="lastName" required><br>
+        <label>Gender</label><br>
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="gender"><br>
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="gender"><br>
+    </form>
+
+    <script>
+        const form1 = document.getElementById("form1");
+        const form2 = document.getElementById("form2");
+
+        form1.addEventListener("submit", function(event) {
+            event.preventDefault(); // prevent form from reloading page
+
+            const username = document.getElementById("fullname").value;
+            const password = document.getElementById("password").value;
+
+            // For demo: simple static validation
+            if (username === "Siva" && password === "1234") {
+                form1.style.display = "none"; // hide login form
+                form2.style.display = "block"; // show next form
+            } else {
+                alert("Invalid credentials. Try again.");
+            }
+        });
+    </script>
+
+</body>
+</html>
