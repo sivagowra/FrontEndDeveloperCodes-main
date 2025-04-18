@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Function</title>
+</head>
+<body>
+    <p>Hello Siva</p>
+    <p id="deno"></p>
+    <h1 id="demo"></h1>
+    <h2 id="demo1"></h2>
+
+    <script>
+        let myFunction=(some)=>{
+document.getElementById('deno').innerHTML=some;
+        }
+
+        let lastFunction=(p1,p2,callback)=>{
+            let sum= p1+p2;
+            callback(sum)
+
+        } 
+        lastFunction(10,20,myFunction)
+        
+        
+        let myfun=()=>{
+            document.getElementById('demo').innerHTML="naidu"
+        }
+        setTimeout(myfun,1000)
+
+
+        let newFunction=(value)=>{
+document.getElementById("demo1").innerHTML=value;
+        }
+        setTimeout(function() {
+            newFunction("hello babu")
+        },1000)
+
+
+    </script>
+    
+</body>
+</html>

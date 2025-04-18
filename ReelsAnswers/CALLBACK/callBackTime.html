@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Date</title>
+</head>
+<body>
+    <p>New Date</p>
+    <p id="time"></p>
+    <script>
+        let myDisplayTime=(some)=>{
+            document.getElementById("time").innerHTML=some;
+        }
+        let time=()=>{
+            let today = new Date();
+            let dateFormate=today.toDateString();
+            myDisplayTime(dateFormate)
+
+        }
+        time()
+    </script>
+</body>
+</html>

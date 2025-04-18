@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    <p>Hello Siva Good Morning</p>
+    <h1 id="demo"></h1>
+    <script>
+        function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+
+        let promise=new Promise(function(res,rej){
+            let x=10;
+            if (x=10){
+            res("Good")
+            }
+            else{
+                rej("Error")
+            }
+        });
+
+        promise.then(
+            function(value){myDisplayer(value)},
+            function(error){myDisplayer(error)},
+
+
+
+        )
+
+    </script>
+    
+</body>
+</html>
